@@ -1,0 +1,54 @@
+import React, { useState, useEffect } from 'react';
+import { Dimmer, Loader, Image, Segment, Button, Form, Message } from 'semantic-ui-react';
+import TodoItem from './TodoItem';
+import TodoInput from './TodoInput';
+import 'cross-fetch/polyfill';
+import { GlobalStyle } from '../layout/global-style';
+import { ProjectsSectionContainer, Header, CardDiv } from './index';
+
+export default function ProjectsSection({createTodoItem}) {
+  const [todoItems, setTodoItems] = useState([
+    { todo: 'Mow the lawn', complete: false },
+    { todo: 'Do Laundry', complete: false },
+    { todo: 'Make Dinner', complete: false },
+  ]);
+
+  const createTodoItem = (todo) => {
+    const newTodoItems = [...todoItems, { todo, complete: false }];
+    setTodoItems(newTodoItems);
+  };
+
+  useEffect(() => {
+    setTodoItems();
+  }, []);
+
+  if (!todoItems) {
+    return (
+      <div>
+        <Segment>
+          <Dimmer active>
+            <Loader size='massive'>....API Data Is Loading....</Loader>
+          </Dimmer>
+          <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
+          <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
+          <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
+          <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
+        </Segment>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <ProjectsSectionContainer>
+        <GlobalStyle />
+        <Header>To Do List Info</Header>
+       <TodoInput createTodoItem={createTodoItem} />
+        {todoItems.map((item, index) => (
+          <TodoItem key={index} index={index} item={item} />
+        ))}
+        <TodoItem />
+      </ProjectsSectionContainer>
+    </>
+  );
+}

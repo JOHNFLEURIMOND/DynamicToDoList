@@ -1,0 +1,7 @@
+[build]
+   functions="dist-functions"
+
+   [[redirects]]
+    from = "/api/*"
+    to = "/.netlify/dist-functions/:splat"
+    status = 200
