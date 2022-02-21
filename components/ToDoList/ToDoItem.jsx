@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { AiFillEdit } from "react-icons/ai";
 import { IoCheckmarkDoneSharp, IoClose } from "react-icons/io5";
 import { UL } from "./index";
-import { Button, TextArea, Progress } from 'semantic-ui-react'
+import { Button, TextArea, Progress, Form } from 'semantic-ui-react'
 const styleLink = document.createElement('link');
 styleLink.rel = 'stylesheet';
 styleLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css';
@@ -39,18 +39,29 @@ const TodoItem = props => {
     }
   };
 
-  
+  const keyPress = (e) => {
+    if (e.charCode === 32 || e.charCode === 13) {
+      // Prevent the default action to stop scrolling when space is pressed
+      e.preventDefault()
+      e => update(item.id, inputRef.current.value, e)
+    }
+  }
+
+
   return (
-    <UL>
-      <li key={item.id} style={{ listStyle: "none !important" }}>
-        <TextArea
-          ref={inputRef}
-          disabled={inputRef}
-          defaultValue={item.item}
-          onKeyPress={e => update(item.id, inputRef.current.value, e)}
-        />
-        <div>
-          <Button onClick={() => changeFocus()}>
+    <div>
+      <UL>
+        <li key={item.id} style={{ listStyle: "none !important" }}>
+          <Form>
+            <TextArea
+              ref={inputRef}
+              disabled={inputRef}
+              defaultValue={item.item}
+              onKeyPress={e => update(item.id, inputRef.current.value, e)}
+            />
+          </Form>
+
+          <Button loading onClick={() => changeFocus()}>
             <AiFillEdit />
           </Button>
           {item.completed === false && (
@@ -64,15 +75,15 @@ const TodoItem = props => {
           <Button style={{ color: "red" }} onClick={() => removeTodo(item.id)}>
             <IoClose />
           </Button>
-        </div>
-        {item.completed && <Progress percent={100} success>
-          This Task Is Completed
-        </Progress>}
-        {!item.completed && <Progress percent={50} error>
-          This Task Is Not Compleled Yet.
-        </Progress>}
-      </li>
-    </UL>
+          {item.completed && <Progress percent={100} success>
+            This Task Is Completed
+          </Progress>}
+          {!item.completed && <Progress percent={50} error>
+            This Task Is Not Compleled Yet.
+          </Progress>}
+        </li>
+      </UL>
+    </div>
   );
 };
 
