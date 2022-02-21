@@ -16,7 +16,6 @@ export default function ProjectsSection() {
     <>
       <ProjectsSectionContainer>
         <GlobalStyle />
-        <Header>To Do List Info</Header>
         <ToDoInput />
       </ProjectsSectionContainer>
     </>

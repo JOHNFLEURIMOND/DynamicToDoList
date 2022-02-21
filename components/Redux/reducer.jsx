@@ -28,7 +28,6 @@ const addTodoReducer = createSlice({
           return todo;
         });
       },
-      
       //completed
       completeTodos: (state, action) => {
         return state.map((todo) => {

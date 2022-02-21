@@ -13,7 +13,6 @@ export const ProjectsSectionContainer = styled.div`
   text-align: center;
   font-weight: 500;
   margin: 0;
-  padding: 2em;
   line-height: normal;
   background-color: ${fleurimondColors.white};
 
@@ -75,7 +74,8 @@ grid-template-rows: 1fr 1fr 1fr;
 }
 `;
 export const CineDiv = styled.div`
-  display: block;
+  display: grid;
+  grid-column: span 3;
 `;
 
 export const Link = styled.a`

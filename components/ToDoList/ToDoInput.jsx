@@ -9,7 +9,7 @@ import {
   NameFieldset,
 
 } from "../Card";
-import { CardDiv } from "./index";
+import { CardDiv, ProjectsSectionContainer, CineDiv } from "./index";
 const styleLink = document.createElement('link');
 styleLink.rel = 'stylesheet';
 styleLink.href = 'https://cdn.jsdelivrnet/npm/semantic-ui/dist/semantic.min.css';
@@ -46,45 +46,44 @@ const TodoInput = (props) => {
   };
 
   return (
-    <div>
+    <ProjectsSectionContainer>
       <GlobalStyle />
-      <input
-        value={todo}
-        onChange={(e) => setTodo(e.target.value)}
-        label='To Do'
-        placeholder='Write your to do here'
-      />
-      <button onClick={() => add()}>Submit</button>
+      <CineDiv>
+        <input
+          value={todo}
+          onChange={(e) => setTodo(e.target.value)}
+          label='To Do'
+          placeholder='Write your to do here'
+        />
+        <button onClick={() => add()}>Submit</button>
 
-      <ul>
-        {props.todos.length > 0 &&
-          props.todos.map((item) => {
-            return <CardDiv key={item.id}>
-              <Card>
-                <CardBody
-                  onClick={() => flipCard(false)}
-                  role="contentInfo"
-                  aria-pressed="false"
-                  aria-label="Card for todo item."
-                >
-                  <main
-                    role="contentInfo"
-                    aria-pressed="true"
-                    aria-label="Product Card with a Image and a Description of product, Effects and Type Data."
-                  >
-                    <Fieldset aria-label="description">
-                      {item.item}
-                    </Fieldset>
-                    <NameFieldset aria-label="title">
-                      Completed: {item.completed}
-                    </NameFieldset>
-                  </main>
-                </CardBody>
-              </Card>
-            </CardDiv>
-          })}
-      </ul>
-    </div >
+      </CineDiv>
+
+      {props.todos.length > 0 &&
+        props.todos.map((item) => {
+          return <Card key={item.id}>
+            <CardBody
+              onClick={() => flipCard(false)}
+              role="contentInfo"
+              aria-pressed="false"
+              aria-label="Card for todo item."
+            >
+              <main
+                role="contentInfo"
+                aria-pressed="true"
+                aria-label="Product Card with a Image and a Description of product, Effects and Type Data."
+              >
+                <Fieldset aria-label="description">
+                  {item.item}
+                </Fieldset>
+                <NameFieldset aria-label="title">
+                  Completed: {item.completed}
+                </NameFieldset>
+              </main>
+            </CardBody>
+          </Card>
+        })}
+    </ProjectsSectionContainer >
   );
 }
 

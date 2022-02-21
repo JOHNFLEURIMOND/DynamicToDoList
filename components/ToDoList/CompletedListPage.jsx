@@ -11,7 +11,7 @@ import {
   updateTodos,
 } from "../Redux/reducer";
 import TodoItem from "./TodoItem";
-
+import { CardDiv, ProjectsSectionContainer } from "./index";
 
 const mapStateToProps = (state) => {
   return {
@@ -31,7 +31,7 @@ const mapDispatchToProps = (dispatch) => {
 const DisplayTodos = (props) => {
   const [sort, setSort] = useState("active");
   return (
-    <div className="displaytodos">
+    <ProjectsSectionContainer>
       <GlobalStyle />
       <Nav />
       <CompletedMainHero />
@@ -55,8 +55,6 @@ const DisplayTodos = (props) => {
         </button>
 
       </div>
-
-      <ul>
 
         {props.todos.length > 0 && sort === "active"
           ? props.todos.map((item) => {
@@ -106,9 +104,8 @@ const DisplayTodos = (props) => {
           })
           : null}
 
-      </ul>
       <Footer />
-    </div>
+    </ProjectsSectionContainer>
 
   );
 };
