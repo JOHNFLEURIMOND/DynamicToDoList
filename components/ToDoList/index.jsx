@@ -13,6 +13,7 @@ export const ProjectsSectionContainer = styled.div`
   text-align: left;
   font-weight: 500;
   margin: 0;
+  padding-left: 10rem;
   line-height: normal;
   background-color: ${fleurimondColors.white};
 
