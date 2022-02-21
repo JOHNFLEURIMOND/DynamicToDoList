@@ -7,7 +7,7 @@ export const ProjectsSectionContainer = styled.div`
   align-items: center;
   grid-gap: 1rem;
   width: 100%;
-  height: 100%;
+  height: 50vw;
   box-sizing: border-box;
   font-size: 1rem;
   text-align: center;
@@ -32,6 +32,8 @@ export const ProjectsSectionContainer = styled.div`
   }
 `;
 
+
+
 export const Header = styled.h1`
   font-size: 3rem;
   text-align: center;
@@ -44,8 +46,33 @@ export const Header = styled.h1`
   }
 `;
 
+
 export const CardDiv = styled.div`
-  grid-column: span 3;
+display: grid;
+justify-items: center;
+align-items: center;
+grid-gap: 1rem;
+width: 100%;
+height: 100%;
+grid-template-columns:  1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr;
+
+@media (max-width: 800px){
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 1rem;
+}
+@media (max-width: 430px){
+  display: grid;
+  grid-template-columns:  1fr;
+  grid-template-rows: 1fr ;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 1rem;
+}
 `;
 export const CineDiv = styled.div`
   display: block;
