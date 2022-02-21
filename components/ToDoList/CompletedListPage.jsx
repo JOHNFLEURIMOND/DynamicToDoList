@@ -32,11 +32,11 @@ const mapDispatchToProps = (dispatch) => {
 const DisplayTodos = (props) => {
   const [sort, setSort] = useState("active");
   return (
-    <ProjectsSectionContainer>
+    <div>
       <GlobalStyle />
       <Nav />
       <CompletedMainHero />
-      <div className="buttons">
+      <ProjectsSectionContainer className="buttons">
         <Button
           onClick={() => setSort("active")}
         >
@@ -55,7 +55,6 @@ const DisplayTodos = (props) => {
           All
         </Button>
 
-      </div>
 
         {props.todos.length > 0 && sort === "active"
           ? props.todos.map((item) => {
@@ -68,7 +67,7 @@ const DisplayTodos = (props) => {
                   removeTodo={props.removeTodo}
                   updateTodo={props.updateTodo}
                   completeTodo={props.completeTodo}
-                  
+
                 />
 
               )
@@ -106,8 +105,9 @@ const DisplayTodos = (props) => {
           })
           : null}
 
+      </ProjectsSectionContainer>
       <Footer />
-    </ProjectsSectionContainer>
+    </div>
 
   );
 };
