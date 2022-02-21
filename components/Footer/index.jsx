@@ -10,10 +10,12 @@ export const Footer = styled.footer`
   height: 10vh;
   box-sizing: border-box;
   display: flex;
+  position:absolute;
+   bottom:0;
   align-items: center;
   text-align: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 12px;
   background: linear-gradient(
     90deg,
     ${fleurimondColors.black} 0%,
@@ -36,7 +38,7 @@ export const FooterLogo = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  font-size: 2.5rem;
+  font-size: 12px ;
   font-weight: 800;
   transition: all 0.5s ease;
   &:hover,
@@ -56,7 +58,7 @@ export const MenuIcon = styled.div`
     top: 0;
     right: 0;
     transform: translate(-50%, 20%);
-    font-size: 4rem;
+    font-size: 12px;
     cursor: pointer;
   }
 `;
@@ -97,7 +99,7 @@ export const MenuItem = styled.li`
 export const MenuLink = styled(Link)`
   text-decoration: none;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 12px;
   color: #fff;
   display: flex;
   justify-content: space-between;

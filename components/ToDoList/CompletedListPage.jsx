@@ -67,6 +67,7 @@ const DisplayTodos = (props) => {
                   removeTodo={props.removeTodo}
                   updateTodo={props.updateTodo}
                   completeTodo={props.completeTodo}
+                  
                 />
 
               )

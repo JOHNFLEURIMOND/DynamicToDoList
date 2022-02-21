@@ -2,17 +2,11 @@ import React, { useState } from 'react';
 import { GlobalStyle } from '../layout/global-style';
 import { connect } from "react-redux";
 import { addTodos } from "../Redux/reducer";
-import {
-  Card,
-  Fieldset,
-  CardBody,
-  NameFieldset,
-
-} from "../Card";
+import { List, Segment } from 'semantic-ui-react'
 import { CardDiv, ProjectsSectionContainer, CineDiv } from "./index";
 const styleLink = document.createElement('link');
 styleLink.rel = 'stylesheet';
-styleLink.href = 'https://cdn.jsdelivrnet/npm/semantic-ui/dist/semantic.min.css';
+styleLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css';
 document.head.appendChild(styleLink);
 
 const mapStateToProps = (state) => {
@@ -24,6 +18,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addTodo: (obj) => dispatch(addTodos(obj)),
+    updateTodo: (obj) => dispatch(updateTodos(obj)),
   };
 };
 
@@ -46,9 +41,9 @@ const TodoInput = (props) => {
   };
 
   return (
+
     <ProjectsSectionContainer>
-      <GlobalStyle />
-      <CineDiv>
+      <div>
         <input
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
@@ -56,34 +51,24 @@ const TodoInput = (props) => {
           placeholder='Write your to do here'
         />
         <button onClick={() => add()}>Submit</button>
+      </div>
 
-      </CineDiv>
+      <div>
+        {props.todos.length > 0 &&
+          props.todos.map((item) => {
+            return <Segment inverted key={item.id}>
+              <List divided inverted relaxed>
+                <List.Item>
+                  <List.Content updateTodo={props.updateTodo}>
+                    {item.item}
+                  </List.Content>
+                </List.Item>
+              </List>
+            </Segment>
+          })}
+      </div>
+    </ProjectsSectionContainer>
 
-      {props.todos.length > 0 &&
-        props.todos.map((item) => {
-          return <Card key={item.id}>
-            <CardBody
-              onClick={() => flipCard(false)}
-              role="contentInfo"
-              aria-pressed="false"
-              aria-label="Card for todo item."
-            >
-              <main
-                role="contentInfo"
-                aria-pressed="true"
-                aria-label="Product Card with a Image and a Description of product, Effects and Type Data."
-              >
-                <Fieldset aria-label="description">
-                  {item.item}
-                </Fieldset>
-                <NameFieldset aria-label="title">
-                  Completed: {item.completed}
-                </NameFieldset>
-              </main>
-            </CardBody>
-          </Card>
-        })}
-    </ProjectsSectionContainer >
   );
 }
 

@@ -3,14 +3,14 @@ import { fleurimondColors } from '../../utils/theme.js';
 
 export const ProjectsSectionContainer = styled.div`
   display: grid;
-  justify-items: center;
-  align-items: center;
+  justify-items: left;
+  align-items: left;
   grid-gap: 1rem;
   width: 100%;
-  height: 50vw;
+  height: 50%;
   box-sizing: border-box;
   font-size: 1rem;
-  text-align: center;
+  text-align: left;
   font-weight: 500;
   margin: 0;
   line-height: normal;
@@ -43,6 +43,9 @@ export const Header = styled.h1`
     text-align: center;
     grid-column: span 2;
   }
+`;
+export const UL = styled.ul`
+list-style: none;
 `;
 
 
