@@ -3,6 +3,7 @@ import Nav from '../Navbar/Nav.jsx';
 import Footer from '../Footer/Footer';
 import CompletedMainHero from '../MainHero/CompletedMainHero';
 import { GlobalStyle, Container } from '../layout/global-style';
+import { List, Segment, Button, Input, TextArea } from 'semantic-ui-react'
 import { connect } from "react-redux";
 import {
   addTodos,
@@ -36,23 +37,23 @@ const DisplayTodos = (props) => {
       <Nav />
       <CompletedMainHero />
       <div className="buttons">
-        <button
+        <Button
           onClick={() => setSort("active")}
         >
           Active
-        </button>
+        </Button>
 
-        <button
+        <Button
           onClick={() => setSort("completed")}
         >
           Completed
-        </button>
+        </Button>
 
-        <button
+        <Button
           onClick={() => setSort("all")}
         >
           All
-        </button>
+        </Button>
 
       </div>
 
