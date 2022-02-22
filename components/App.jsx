@@ -28,6 +28,7 @@ const App = () => (
     <Switch>
       <Route path="/" exact component={Homepage} />
       <Route path="/CompletedListPage/" component={CompletedListPage} />
+      <Route path="/About/" component={About} />
     </Switch>
   </Router>
 );

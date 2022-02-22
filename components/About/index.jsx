@@ -1,30 +1,52 @@
+import styled, { css } from 'styled-components';
 import { fleurimondColors } from '../../utils/theme.js';
-import styled, { createGlobalStyle } from 'styled-components';
 
-export const Button = styled.button`
-    font-size: 13px;
-    border-radius: 3px;
-    border-style: solid;
-    border-width: 1px;
-    padding: 8px 11px;
-    color: ${fleurimondColors.palesasAqua};
-    background-color: ${fleurimondColors.black};
-    border-color: ${fleurimondColors.black};
-    cursor: pointer;
-    display: inline-block;
-    letter-spacing: 0.02em;
-    line-height: 1;
+export const ProjectsSectionContainer = styled.div`
+  display: grid;
+  justify-items: left;
+  align-items: left;
+  grid-gap: 1rem;
+  width: 100%;
+  height: 100vw;
+  box-sizing: border-box;
+  font-size: 1rem;
+  text-align: left;
+  font-weight: 500;
+  margin: 0;
+  padding-left: 10rem;
+  line-height: normal;
+  background-color: ${fleurimondColors.white};
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 200px;
 
-    :hover, :active, :focus{
-        background-color: ${fleurimondColors.palesasAqua};
-        border-color: ${fleurimondColors.palesasAqua};
-        color: ${fleurimondColors.black};
-        text-decoration: none;
-      },
-  
-@media all and (max-width:30em){
-  display:block;
-  margin:0.4em auto;
- }
+  @media (max-width: 800px) {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
+  }
+`;
 
+
+
+export const Header = styled.h1`
+  font-size: 3rem;
+  text-align: center;
+  grid-column: span 3;
+
+  @media (max-width: 800px) {
+    font-size: 2rem;
+    text-align: center;
+    grid-column: span 2;
+  }
+`;
+export const UL = styled.ul`
+list-style: none;
 `;
