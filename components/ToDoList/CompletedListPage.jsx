@@ -11,7 +11,7 @@ import {
   removeTodos,
   updateTodos,
 } from "../Redux/reducer";
-import TodoItem from "./TodoItem";
+import ToDoItem from "./ToDoItem";
 import { CardDiv, ProjectsSectionContainer } from "./index";
 
 const mapStateToProps = (state) => {
@@ -61,7 +61,7 @@ const DisplayTodos = (props) => {
             return (
               item.completed === false && (
 
-                <TodoItem
+                <ToDoItem
                   key={item.id}
                   item={item}
                   removeTodo={props.removeTodo}
@@ -79,7 +79,7 @@ const DisplayTodos = (props) => {
           ? props.todos.map((item) => {
             return (
               item.completed === true && (
-                <TodoItem
+                <ToDoItem
                   key={item.id}
                   item={item}
                   removeTodo={props.removeTodo}
@@ -94,7 +94,7 @@ const DisplayTodos = (props) => {
         {props.todos.length > 0 && sort === "all"
           ? props.todos.map((item) => {
             return (
-              <TodoItem
+              <ToDoItem
                 key={item.id}
                 item={item}
                 removeTodo={props.removeTodo}

@@ -20,7 +20,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const TodoItem = props => {
+const ToDoItem = props => {
   <GlobalStyle />
   const { item, updateTodo, removeTodo, completeTodo } = props;
   const inputRef = useRef(true);
@@ -31,11 +31,12 @@ const TodoItem = props => {
   };
 
   const update = (id, value, e) => {
-    console.log("update: ", e.which)
-    if (e.which === 13) {
-      //here 13 is key code for enter key
+    console.log("update: ",e.keyCode)
+    //here 13 is key code for enter key
+    if (e.keyCode === 13) {
+      //13 is the Enter key code
       updateTodo({ id, item: value });
-      inputRef.current.disabled = false;
+    inputRef.current.disabled = false;
     }
   };
 
@@ -52,14 +53,12 @@ const TodoItem = props => {
     <div>
       <UL style={{ listStyle: "none !important" }}>
         <li key={item.id} style={{ listStyle: "none !important" }}>
-          <Form>
-            <TextArea
-              ref={inputRef}
-              disabled={inputRef}
-              defaultValue={item.item}
-              onKeyPress={e => update(item.id, inputRef.current.value, e)}
-            />
-          </Form>
+          <textarea
+            ref={inputRef}
+            disabled={inputRef}
+            defaultValue={item.item}
+            onKeyPress={e => update(item.id, inputRef.current.value, e)}
+          />
 
           <Button onClick={() => changeFocus()}>
             <AiFillEdit />
@@ -75,23 +74,23 @@ const TodoItem = props => {
           <Button style={{ color: "red" }} onClick={() => removeTodo(item.id)}>
             <IoClose />
           </Button>
+          <div style={{ padding: ".5rem 0" }}>
+            {item.completed && <Progress percent={100} success>
+              This Task Is Completed
+            </Progress>}
+          </div>
+          <div style={{ padding: ".5rem" }}>
+            {!item.completed && <Progress percent={50} error>
+              This Task Is Not Completed
+            </Progress>}
+          </div>
 
         </li>
       </UL>
 
-      <div style={{ padding: ".5rem" }}>
-        {item.completed && <Progress percent={100} success>
-          This Task Is Completed
-        </Progress>}
-      </div>
-      <div style={{ padding: ".5rem" }}>
-        {item.completed && <Progress percent={50} error>
-          This Task Is Completed
-        </Progress>}
-      </div>
 
     </div>
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoItem);
+export default connect(mapStateToProps, mapDispatchToProps)(ToDoItem);
