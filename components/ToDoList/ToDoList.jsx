@@ -4,7 +4,7 @@ import 'cross-fetch/polyfill';
 import { GlobalStyle } from '../layout/global-style';
 import { ProjectsSectionContainer } from './index';
 
- const ProjectsSection = () => {
+const ProjectsSection = () => {
   return (
     <>
       <ProjectsSectionContainer>
@@ -13,7 +13,6 @@ import { ProjectsSectionContainer } from './index';
       </ProjectsSectionContainer>
     </>
   );
-}
-
+};
 
 export default ProjectsSection;

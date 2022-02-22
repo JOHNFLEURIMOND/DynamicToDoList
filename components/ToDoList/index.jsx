@@ -34,8 +34,6 @@ export const ProjectsSectionContainer = styled.div`
   }
 `;
 
-
-
 export const Header = styled.h1`
   font-size: 3rem;
   text-align: center;
@@ -48,74 +46,70 @@ export const Header = styled.h1`
   }
 `;
 export const UL = styled.ul`
-list-style: none;
+  list-style: none;
 `;
 export const TextArea = styled.textarea`
-display: block;
-box-sizing: padding-box;
-overflow: hidden;
-margin-top: 10px;
-margin-left: 50px;
-width: 500px;
-height: 100px;
--moz-border-bottom-colors: none;
--moz-border-left-colors: none;
--moz-border-right-colors: none;
--moz-border-top-colors: none;
-background: none repeat scroll 0 0 ${fleurimondColors.graySmoke};
-border-color: -moz-use-text-color ${fleurimondColors.white} ${fleurimondColors.white} -moz-use-text-color;
-border-image: none;
-border-radius: 6px;
-border-style: none solid solid none;
-border-width: medium 1px 1px medium;
-padding: 10px;
-width: 250px;
-font-size: 14px;
-margin: 50px auto;
-box-shadow: 2px 2px 8px rgba(black, .3);
-border: 0;
+  display: block;
+  box-sizing: padding-box;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-left: 50px;
+  width: 500px;
+  height: 100px;
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background: none repeat scroll 0 0 ${fleurimondColors.graySmoke};
+  border-color: -moz-use-text-color ${fleurimondColors.white} ${fleurimondColors.white} -moz-use-text-color;
+  border-image: none;
+  border-radius: 6px;
+  border-style: none solid solid none;
+  border-width: medium 1px 1px medium;
+  padding: 10px;
+  width: 250px;
+  font-size: 14px;
+  margin: 50px auto;
+  box-shadow: 2px 2px 8px rgba(black, 0.3);
+  border: 0;
 
-&:focus{
-  background: ${fleurimondColors.white};
-  border: none;
-  outline: none;
-}
+  &:focus {
+    background: ${fleurimondColors.white};
+    border: none;
+    outline: none;
+  }
 `;
 
-
 export const ButtonArea = styled.div`
-display: grid;
-grid-template-rows: 50px;
-grid-template-columns: 150px 150px ;
-grid-gap: 30px;
+  display: grid;
+  grid-template-rows: 50px;
+  grid-template-columns: 150px 150px;
+  grid-gap: 30px;
 `;
 export const CineDiv = styled.div`
   display: grid;
   grid-column: span 3;
 `;
 export const Button = styled.button`
-
-  .first{
+  .first {
     background: #19c3d6;
     box-shadow: inset 0px 0px 0px 0px #ff0099;
     transition: all 0.5s ease-in-out;
   }
-  .first:hover{
+  .first:hover {
     box-shadow: inset 0px -200px 0px 0px #ff0099;
   }
-  
-
 `;
 export const Form = styled.div`
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%,-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-display: flex;
-flex-wrap: wrap;
-flex-direction: column; 
-align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Link = styled.a`

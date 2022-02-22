@@ -48,9 +48,8 @@ export const Header = styled.h1`
 `;
 
 export const UL = styled.ul`
-list-style: none;
+  list-style: none;
 `;
-
 
 export const Menu = styled.ul`
   display: flex;
@@ -84,17 +83,17 @@ export const MenuLink = styled(Link)`
   font-size: 1.3rem;
   color: ${fleurimondColors.white};
   font-size: 13px;
-    border-radius: 3px;
-    border-style: solid;
-    border-width: 1px;
-    padding: 8px 11px;
-    color: ${fleurimondColors.palesasAqua};
-    background-color: ${fleurimondColors.black};
-    border-color: ${fleurimondColors.black};
-    cursor: pointer;
-    display: inline-block;
-    letter-spacing: 0.02em;
-    line-height: 1;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 8px 11px;
+  color: ${fleurimondColors.palesasAqua};
+  background-color: ${fleurimondColors.black};
+  border-color: ${fleurimondColors.black};
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 0.02em;
+  line-height: 1;
 
   transition: all 0.2s ease;
   &:hover {

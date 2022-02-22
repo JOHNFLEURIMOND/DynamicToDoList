@@ -36,16 +36,15 @@ const Navbar = () => {
             </MenuLink>
           </MenuItem>
           <MenuItem>
-          <MenuLink
-                onClick={handleClick}
-                to={{
-                  pathname: "/CompletedListPage/",
-                  state: {
-                  }
-                }}
-              >
-                Completed
-              </MenuLink>
+            <MenuLink
+              onClick={handleClick}
+              to={{
+                pathname: '/CompletedListPage/',
+                state: {},
+              }}
+            >
+              Completed
+            </MenuLink>
           </MenuItem>
           <MenuItem>
             <MenuLink onClick={handleClick} to='/About'>
