@@ -87,6 +87,8 @@ export const Container = styled.div`
   margin: 0;
   padding: 0;
   width: 100%;
+  height: 100%
+  display: block;
 
   @media (max-width: 400px) {
     padding: 0;

@@ -67,7 +67,7 @@ const CompletedItems = (props) => {
                     ? props.todos.map((item) => {
                         return (
                             item.completed === true && (
-                                <Segment inverted key={item.id}>
+                                <Segment inverted key={item.id} style={{ marginBottom: "4rem", marginLeft: "3rem" }}>
                                     <List divided inverted relaxed>
                                         <List.Item>
                                             <List.Content>

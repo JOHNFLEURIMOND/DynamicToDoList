@@ -31,15 +31,15 @@ const mapDispatchToProps = (dispatch) => {
 
 const DisplayTodos = (props) => {
   return (
-    <>
+    <Container>
       <Nav />
+      <CompletedMainHero />
       <ProjectsSectionContainer>
         <GlobalStyle />
-        <CompletedMainHero />
         <CompletedItems />
       </ProjectsSectionContainer>
       <Footer />
-    </>
+    </Container>
 
   );
 };

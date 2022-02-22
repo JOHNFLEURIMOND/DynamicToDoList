@@ -1,11 +1,11 @@
 import React from 'react';
-import { MainHero, Title } from './index';
+import { CompletedItemsHero, Title } from './index';
 
 const JFMainHero = (props) => {
   return (
-    <MainHero>
+    <CompletedItemsHero>
       <Title>Completed List</Title>
-    </MainHero>
+    </CompletedItemsHero>
   );
 };
 

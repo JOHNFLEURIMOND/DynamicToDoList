@@ -58,7 +58,7 @@ const ToDoInput = (props) => {
       <div>
         {props.todos.length > 0 &&
           props.todos.map((item) => {
-            return <Segment inverted key={item.id}>
+            return <Segment inverted key={item.id} style={{ marginLeft: "3rem" }}>
               <List divided inverted relaxed>
                 <List.Item>
                   <List.Content>

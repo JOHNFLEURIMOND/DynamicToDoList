@@ -3,7 +3,21 @@ import { fleurimondColors } from '../../utils/theme.js';
 
 export const MainHero = styled.div`
   width: 100%;
-  height: 20vw;
+  height: 40vw;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 1rem;
+  font-size: 20px;
+  background-color: ${fleurimondColors.white};
+  padding: 20px;
+`;
+export const CompletedItemsHero = styled.div`
+  width: 100%;
+  height: 40vw;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

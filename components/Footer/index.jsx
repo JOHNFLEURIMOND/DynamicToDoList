@@ -10,8 +10,9 @@ export const Footer = styled.footer`
   height: 10vh;
   box-sizing: border-box;
   display: flex;
-  position:absolute;
-   bottom:0;
+  position: absolute;
+  padding: 3em;
+    margin-top: auto;
   align-items: center;
   text-align: center;
   justify-content: center;

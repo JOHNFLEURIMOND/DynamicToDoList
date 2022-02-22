@@ -7,7 +7,7 @@ export const ProjectsSectionContainer = styled.div`
   align-items: left;
   grid-gap: 1rem;
   width: 100%;
-  height: 50%;
+  height: 100vw;
   box-sizing: border-box;
   font-size: 1rem;
   text-align: left;
@@ -16,6 +16,8 @@ export const ProjectsSectionContainer = styled.div`
   padding-left: 10rem;
   line-height: normal;
   background-color: ${fleurimondColors.white};
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 200px;
 
   @media (max-width: 800px) {
     width: 100%;
