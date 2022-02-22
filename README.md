@@ -5,9 +5,10 @@
  This application built with React.js, Redux, Webpack, Styled-Components, Semantic-UI.
 
 ## Optimizations.
+I would love to correct the cards not bleeding into the footer, or have the footer stick below the main hero and main contents.
 
 # How It's Works:white_check_mark::
-I have to created a `reducer` in my `/Redux` folder to that handles all these state and action functions like `updateTodos`, `completeTodos`, `removeTodos`, `addTodos` for each one of the buttons a user can select...Once I write my reducers functions to handle state. When a user enters in a task within the input & press the  `submit` button, a function `add` will fire off another function `addTodos` from my reducer that that is passed as a prop.
+I have to create a `reducer` in my `/Redux` folder to that handles all these state and action functions like `updateTodos`, `completeTodos`, `removeTodos`, `addTodos` for each one of the buttons a user can select...Once I write my reducers functions to handle state. When a user enters in a task within the input & press the  `submit` button, a function `add` will fire off another function `addTodos` from my reducer that that is passed as a prop.
 
 
 
