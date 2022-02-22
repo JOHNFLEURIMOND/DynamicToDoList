@@ -32,7 +32,7 @@ const mapDispatchToProps = (dispatch) => {
 const DisplayTodos = (props) => {
   const [sort, setSort] = useState("active");
   return (
-    <div>
+    <div style={{height: "100%"}}>
       <GlobalStyle />
       <Nav />
       <CompletedMainHero />
