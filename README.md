@@ -1,5 +1,6 @@
 # :checkered_flag:What It Looks Like :checkered_flag:: 
 
+https://fleurimond-redux-todo.netlify.app/
 
 # How It's Made :nut_and_bolt:🔨 :hammer::wrench::
  This application built with React.js, Redux, Webpack, Styled-Components, Semantic-UI.
