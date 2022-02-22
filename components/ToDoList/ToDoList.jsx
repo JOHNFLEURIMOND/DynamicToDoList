@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ToDoInput from './ToDoInput';
 import 'cross-fetch/polyfill';
 import { GlobalStyle } from '../layout/global-style';
-import { ProjectsSectionContainer, Header, CardDiv } from './index';
+import { ProjectsSectionContainer } from './index';
 
  const ProjectsSection = () => {
   return (

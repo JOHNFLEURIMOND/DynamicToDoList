@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
 import { GlobalStyle } from '../layout/global-style';
 import { connect } from "react-redux";
-import { addTodos } from "../Redux/reducer";
-import { List, Segment, Button, Input, TextArea } from 'semantic-ui-react'
-import { ProjectsSectionContainer, UL } from "./index";
+import { addTodos, updateTodos, completeTodo, removeTodos } from "../Redux/reducer";
+import { List, Segment, Button, Input } from 'semantic-ui-react'
+import { ProjectsSectionContainer, UL, Form } from "./index";
 import { AiFillEdit } from "react-icons/ai";
-import { motion } from "framer-motion";
+import ToDoItem from "./ToDoItem";
 
 const mapStateToProps = (state) => {
   return {
@@ -16,28 +16,18 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addTodo: (obj) => dispatch(addTodos(obj)),
+    removeTodo: (id) => dispatch(removeTodos(id)),
     updateTodo: (obj) => dispatch(updateTodos(obj)),
+    completeTodo: (id) => dispatch(completeTodos(id)),
   };
 };
-
-const TodoInput = (props) => {
+const ToDoInput = (props) => {
   console.log("state", props);
   const [todo, setTodo] = useState("");
-  const { updateTodo, item } = props;
+  const { updateTodo } = props;
+  console.log("updateTodo:", updateTodo);
   const inputRef = useRef(true);
 
-  const changeFocus = () => {
-    inputRef.current.disabled = false;
-    inputRef.current.focus();
-  };
-
-  const update = (id, value, e) => {
-    if (e.which === 13) {
-      //here 13 is key code for enter key
-      updateTodo({ id, item: value });
-      inputRef.current.disabled = true;
-    }
-  };
   const add = (e) => {
     if (todo === "") {
       alert("Input is Empty");
@@ -62,7 +52,7 @@ const TodoInput = (props) => {
           label='To Do'
           placeholder='Write your to do here'
         />
-        <Button onClick={() => add()}>Submit</Button>
+        <Button color="green" onClick={() => add()}>Submit</Button>
       </div>
 
       <div>
@@ -77,25 +67,23 @@ const TodoInput = (props) => {
                 </List.Item>
               </List>
 
-              <UL style={{ listStyle: "none !important" }}>
+              <UL>
                 <li key={item.id} style={{ listStyle: "none !important" }}>
-                <TextArea
-                    ref={inputRef}
-                    disabled={inputRef}
-                    defaultValue={item.item}
-                    onKeyPress={(e) => update(item.id, inputRef.current.value, e)}
+                  <ToDoItem
+                    key={item.id}
+                    item={item}
+                    removeTodo={props.removeTodo}
+                    updateTodo={props.updateTodo}
+                    completeTodo={props.completeTodo}
                   />
-                  <div>
-                    <Button onClick={() => changeFocus()}>
-                      <AiFillEdit />
-                    </Button>
-                    <Button onClick={() => add()}>Submit</Button>
-                  </div>
                 </li>
               </UL>
+
+
             </Segment>
 
           })}
+
 
       </div>
     </ProjectsSectionContainer>
@@ -104,4 +92,4 @@ const TodoInput = (props) => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoInput);
+export default connect(mapStateToProps, mapDispatchToProps)(ToDoInput);

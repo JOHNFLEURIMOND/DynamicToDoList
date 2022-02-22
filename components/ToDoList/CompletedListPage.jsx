@@ -3,7 +3,7 @@ import Nav from '../Navbar/Nav.jsx';
 import Footer from '../Footer/Footer';
 import CompletedMainHero from '../MainHero/CompletedMainHero';
 import { GlobalStyle, Container } from '../layout/global-style';
-import { List, Segment, Button, Input, TextArea } from 'semantic-ui-react'
+import { Segment, List } from 'semantic-ui-react'
 import { connect } from "react-redux";
 import {
   addTodos,
@@ -11,8 +11,8 @@ import {
   removeTodos,
   updateTodos,
 } from "../Redux/reducer";
-import ToDoItem from "./ToDoItem";
-import { CardDiv, ProjectsSectionContainer } from "./index";
+import CompletedItems from "./CompletedItems";
+import { ProjectsSectionContainer } from "./index";
 
 const mapStateToProps = (state) => {
   return {
@@ -30,84 +30,16 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const DisplayTodos = (props) => {
-  const [sort, setSort] = useState("active");
   return (
-    <div style={{height: "100%"}}>
-      <GlobalStyle />
+    <>
       <Nav />
-      <CompletedMainHero />
-      <ProjectsSectionContainer className="buttons">
-        <Button
-          onClick={() => setSort("active")}
-        >
-          Active
-        </Button>
-
-        <Button
-          onClick={() => setSort("completed")}
-        >
-          Completed
-        </Button>
-
-        <Button
-          onClick={() => setSort("all")}
-        >
-          All
-        </Button>
-
-
-        {props.todos.length > 0 && sort === "active"
-          ? props.todos.map((item) => {
-            return (
-              item.completed === false && (
-
-                <ToDoItem
-                  key={item.id}
-                  item={item}
-                  removeTodo={props.removeTodo}
-                  updateTodo={props.updateTodo}
-                  completeTodo={props.completeTodo}
-                  
-                />
-
-              )
-            );
-          })
-          : null}
-        {/* for completed items */}
-        {props.todos.length > 0 && sort === "completed"
-          ? props.todos.map((item) => {
-            return (
-              item.completed === true && (
-                <ToDoItem
-                  key={item.id}
-                  item={item}
-                  removeTodo={props.removeTodo}
-                  updateTodo={props.updateTodo}
-                  completeTodo={props.completeTodo}
-                />
-              )
-            );
-          })
-          : null}
-        {/* for all items */}
-        {props.todos.length > 0 && sort === "all"
-          ? props.todos.map((item) => {
-            return (
-              <ToDoItem
-                key={item.id}
-                item={item}
-                removeTodo={props.removeTodo}
-                updateTodo={props.updateTodo}
-                completeTodo={props.completeTodo}
-              />
-            );
-          })
-          : null}
-
+      <ProjectsSectionContainer>
+        <GlobalStyle />
+        <CompletedMainHero />
+        <CompletedItems />
       </ProjectsSectionContainer>
       <Footer />
-    </div>
+    </>
 
   );
 };
