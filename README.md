@@ -121,8 +121,8 @@ Where the user will see the Main Hero for the page and Two buttons that say `Com
 `CompletedItems.jsx`
 
 
-    ```
- <ButtonArea>
+```
+<ButtonArea>
   <Button basic color="green" onClick={() => setSort("completed")}>
     Completed
   </Button>
@@ -158,7 +158,7 @@ Where the user will see the Main Hero for the page and Two buttons that say `Com
         );
       })
     : null;}
-    ```
+```
 
 # Portfolio :open_file_folder::
 
