@@ -13,7 +13,7 @@ I have to create a `reducer` in my `/Redux` folder to that handles all these sta
 
 
 
- A card will the displays the info from the user typed input state `const [todo, setTodo] = useState("");`, a textarea if the user wants to update task, three buttons that will fire off the events for the current state and action functions `updateTodos`, `completeTodos`, `removeTodos`. To make all this happen I have to connect my redux store with React App.
+ A card will the displays the info from the user typed input state `const [todo, setTodo] = useState("");`, a textarea if the user wants to update task, three buttons that will fire off the events for the current state and action functions `updateTodos` on KeyPress and the user press enter `(e.which === 13)` it will update the task,  when the use clicks complete button, the  `completeTodos` function will fire off and complete the task, when the user clicks on the red X it will fire off `removeTodos` function and it will remove the todo. To make all this happen I have to connect my redux store with React App.
 
 I pass that same reducer to my store, I wrap my main App component in `main.js` in `Provider` which is connecting redux store with React App. Now I can use the store & Redux functionalities in my components. 
 
