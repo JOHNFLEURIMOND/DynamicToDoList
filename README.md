@@ -48,6 +48,8 @@ Where the user will see the Main Hero for the page and Two buttons that say `Com
 2. run `npm install`
 
 ## Available Scripts
+ `node` -v v16.13.2
+ `npm`-v 8.1.2
 
 In the project directory, you can run:
 
