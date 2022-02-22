@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { fleurimondColors } from '../../utils/theme.js';
 
 export const Nav = styled.nav`
-  font-size: 12px;
+  font-size: 1.4rem;
   width: 100%;
   top: 0;
   z-index: 999;
@@ -40,7 +40,7 @@ export const NavLogo = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 800;
   transition: all 0.5s ease;
   &:hover {
@@ -110,7 +110,7 @@ export const MenuItem = styled.li`
 export const MenuLink = styled(Link)`
   text-decoration: none;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 1.3rem;
   color: ${fleurimondColors.white};
   display: flex;
   justify-content: space-between;

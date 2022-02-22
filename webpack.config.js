@@ -62,6 +62,10 @@ module.exports = {
           'sass-loader',
         ],
       },
+        {
+          test: /\.(txt|md)$/i,
+          use: 'raw-loader',
+        },
       {
         test: /\.(jpe?g|gif|png|svg)$/i,
         use: [

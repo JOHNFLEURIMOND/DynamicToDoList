@@ -1,4 +1,3 @@
-import React from 'react';
 import { GlobalStyle, Container } from '../layout/global-style';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -11,12 +10,11 @@ export const Footer = styled.footer`
   box-sizing: border-box;
   display: flex;
   position: absolute;
-  padding: 3em;
-    margin-top: auto;
+
   align-items: center;
   text-align: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 1.8rem;
   background: linear-gradient(
     90deg,
     ${fleurimondColors.black} 0%,
@@ -39,8 +37,8 @@ export const FooterLogo = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  font-size: 12px ;
-  font-weight: 800;
+  font-size: 1.8rem;
+  font-weight: bolder;
   transition: all 0.5s ease;
   &:hover,
   &:active,
@@ -59,7 +57,7 @@ export const MenuIcon = styled.div`
     top: 0;
     right: 0;
     transform: translate(-50%, 20%);
-    font-size: 12px;
+    font-size: 1.8rem;
     cursor: pointer;
   }
 `;
@@ -100,7 +98,7 @@ export const MenuItem = styled.li`
 export const MenuLink = styled(Link)`
   text-decoration: none;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 1.3rem;
   color: #fff;
   display: flex;
   justify-content: space-between;

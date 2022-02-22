@@ -7,7 +7,7 @@ export const ProjectsSectionContainer = styled.div`
   align-items: left;
   grid-gap: 1rem;
   width: 100%;
-  height: 100vw;
+  height: 80vw;
   box-sizing: border-box;
   font-size: 1rem;
   text-align: left;

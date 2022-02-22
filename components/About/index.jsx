@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { fleurimondColors } from '../../utils/theme.js';
+import { Link } from 'react-router-dom';
 
 export const ProjectsSectionContainer = styled.div`
   display: grid;
@@ -34,8 +35,6 @@ export const ProjectsSectionContainer = styled.div`
   }
 `;
 
-
-
 export const Header = styled.h1`
   font-size: 3rem;
   text-align: center;
@@ -47,6 +46,69 @@ export const Header = styled.h1`
     grid-column: span 2;
   }
 `;
+
 export const UL = styled.ul`
 list-style: none;
+`;
+
+
+export const Menu = styled.ul`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  @media only screen and (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: ${({ click }) => (click ? '0' : '-100%')};
+
+    transition: all 0.5s ease;
+  }
+`;
+
+export const MenuItem = styled.li`
+  list-style: none;
+  height: 80px;
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+    &:hover {
+      border: none;
+    }
+  }
+`;
+
+export const MenuLink = styled(Link)`
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: ${fleurimondColors.white};
+  font-size: 13px;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 8px 11px;
+    color: ${fleurimondColors.palesasAqua};
+    background-color: ${fleurimondColors.black};
+    border-color: ${fleurimondColors.black};
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: 0.02em;
+    line-height: 1;
+
+  transition: all 0.2s ease;
+  &:hover {
+    color: ${fleurimondColors.woooRed};
+    transform: traslateY(-3rem);
+  }
+  &:active {
+    transform: traslateY(3rem);
+    color: ${fleurimondColors.woooRed};
+  }
+  @media only screen and (max-width: 1000px) {
+    display: block;
+    padding: 3rem;
+    text-align: center;
+    transition: all 0.2s ease;
+  }
 `;

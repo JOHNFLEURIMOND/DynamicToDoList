@@ -12,7 +12,7 @@ import {
   removeTodos,
   updateTodos,
 } from "../Redux/reducer";
-import {  } from "./index";
+import { ProjectsSectionContainer } from "./index";
 
 const mapDispatchToProps = (dispatch) => {
   return {
