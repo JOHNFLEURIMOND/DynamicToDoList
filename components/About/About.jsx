@@ -24,7 +24,7 @@ const DisplayTodos = (props) => {
           <MenuItem>
             <a
               onClick={handleClick}
-              href="https://github.com/JOHNFLEURIMOND/DynamicToDoList/blob/main/README.md"
+              href="https://github.com/JOHNFLEURIMOND/ReactReduxToDoList/blob/main/README.md"
             >
               Read Me
             </a>
