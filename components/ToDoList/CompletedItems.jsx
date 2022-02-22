@@ -22,24 +22,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 const CompletedItems = (props) => {
   const [sort, setSort] = useState('completed');
-  console.log('state', props);
-  const [todo, setTodo] = useState('');
-  const { updateTodo } = props;
-  console.log('updateTodo:', updateTodo);
-  const inputRef = useRef(true);
-
-  const add = (e) => {
-    if (todo === '') {
-      alert('Input is Empty');
-    } else {
-      props.addTodo({
-        id: Math.floor(Math.random() * 1000),
-        item: todo,
-        completed: false,
-      });
-      setTodo('');
-    }
-  };
 
   return (
     <ProjectsSectionContainer>

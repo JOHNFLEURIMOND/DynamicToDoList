@@ -9,9 +9,50 @@ https://fleurimond-redux-todo.netlify.app/
 I would love to correct the cards not bleeding into the footer, or have the footer stick below the main hero and main contents.
 
 # How It's Works:white_check_mark::
-I have to create a `reducer` in my `/Redux` folder to that handles all these state and action functions like `updateTodos`, `completeTodos`, `removeTodos`, `addTodos` for each one of the buttons a user can select...Once I write my reducers functions to handle state. When a user enters in a task within the input & press the  `submit` button, a function `add` will fire off another function `addTodos` from my reducer that that is passed as a prop.
+I have to create a `reducer` in my `/Redux` folder to that handles all these state and action functions like `updateTodos`, `completeTodos`, `removeTodos`, `addTodos` for each one of the buttons a user can select...Once I write my reducers functions to handle state. When a user enters in a task within the input & press the  `submit` button, a function `add` will fire off another function `addTodos` from my reducer that is passed as a prop.
 
+`./components/ToDoList/ToDoInput.jsx`  and this is passed to `./components/ToDoList/ToDoList.jsx` and then passed to the Parent component `App.jsx`
+```
+ const add = (e) => {
+    if (todo === '') {
+      alert('Input is Empty');
+    } else {
+      props.addTodo({
+        id: Math.floor(Math.random() * 1000),
+        item: todo,
+        completed: false,
+      });
+      setTodo('');
+    }
+  };
 
+   <div>
+        <Input
+          value={todo}
+          onChange={(e) => setTodo(e.target.value)}
+          label='To Do'
+          placeholder='Write your to do here'
+        />
+        <Button color='green' onClick={() => add()}>
+          Submit
+        </Button>
+      </div>
+  ```
+
+```
+const Homepage = (props) => {
+
+  return (
+    <Container>
+      <GlobalStyle />
+      <Nav />
+      <MainHero />
+      <ToDoList />
+      <Footer />
+    </Container>
+  );
+};
+```
 
  A card will the displays the info from the user typed input state `const [todo, setTodo] = useState("");`, a textarea if the user wants to update task, three buttons that will fire off the events for the current state and action functions `updateTodos` on KeyPress and the user press enter `(e.which === 13)` it will update the task,  when the use clicks complete button, the  `completeTodos` function will fire off and complete the task, when the user clicks on the red X it will fire off `removeTodos` function and it will remove the todo. To make all this happen I have to connect my redux store with React App.
 
@@ -24,17 +65,105 @@ With the `connect()` in React-Redux you can create methods that allow you to hoo
 
 `./components/ToDoList/ToDoItem.jsx`
 
+     ``` <TextArea
+        ref={inputRef}
+        disabled={inputRef}
+        defaultValue={item.item}
+        onChange={(e) => setTodo(e.target.value)}
+        onKeyDown={(e) => update(item.id, inputRef.current.value, e)}
+      />
+
+      <Button onClick={() => changeFocus()}>
+        <AiFillEdit />
+      </Button>
+      {item.completed === false && (
+        <Button style={{ color: 'green' }} onClick={() => completeTodo(item.id)}>
+          <IoCheckmarkDoneSharp />
+        </Button>
+      )}
+      <Button style={{ color: 'red' }} onClick={() => removeTodo(item.id)}>
+        <IoClose />
+      </Button>
+      <div style={{ padding: '.5rem 0' }}>
+        {item.completed && (
+          <Progress percent={100} success>
+            This Task Is Completed
+          </Progress>
+        )}
+      </div>
+      <div style={{ padding: '.5rem' }}>
+        {!item.completed && (
+          <Progress percent={50} error>
+            This Task Is Not Completed
+          </Progress>
+        )}
+      </div>```
 
 If a user brings its mouse to the `Navbar` clicks `Completed` Link, It will then take you to a new page with `react-router-dom` 
 
 `App.jsx`
 
-
+```const App = () => (
+  <Router>
+    <Switch>
+      <Route path="/" exact component={Homepage} />
+      <Route path="/CompletedListPage/" component={CompletedListPage} />
+      <Route path="/About/" component={About} />
+    </Switch>
+  </Router>
+);
+```
 
 Where the user will see the Main Hero for the page and Two buttons that say `Completed` and `All` if the user selected the `Completed` Button then the `completedTodos` function will fire off. then it will have a success bar and a message saying `This Task Is Completed` if not say `This Task Is Not Completed` with a unsuccessful bar..
-## My Awesome Project && Lessons Learned :mortar_board::
 
+`./components/ToDoList/ToDoItem.jsx` this child component is passed to its parent component `./components/ToDoList/CompletedItems.jsx` then passed `./components/ToDoList/CompletedListPage.jsx`
 
+`CompletedItems.jsx`
+
+    ```
+    <ButtonArea>
+  <Button basic color="green" onClick={() => setSort("completed")}>
+    Completed
+  </Button>
+
+  <Button basic color="red   " onClick={() => setSort("all")}>
+    All
+  </Button>
+</ButtonArea>;
+
+{
+  /* for completed items */
+}
+{
+  props.todos.length > 0 && sort === "completed"
+    ? props.todos.map(item => {
+        return (
+          item.completed === true && (
+            <Segment inverted key={item.id}>
+              <List divided inverted relaxed>
+                <List.Item>
+                  <List.Content>{item.item}</List.Content>
+                </List.Item>
+              </List>
+
+              <UL>
+                <li key={item.id} style={{ listStyle: "none !important" }}>
+                  <ToDoItem
+                    key={item.id}
+                    item={item}
+                    removeTodo={props.removeTodo}
+                    updateTodo={props.updateTodo}
+                    completeTodo={props.completeTodo}
+                  />
+                </li>
+              </UL>
+            </Segment>
+          )
+        );
+      })
+    : null;
+}
+```
 
 # Portfolio :open_file_folder::
 
