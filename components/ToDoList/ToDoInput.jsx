@@ -5,6 +5,7 @@ import { addTodos } from "../Redux/reducer";
 import { List, Segment, Button, Input, TextArea } from 'semantic-ui-react'
 import { ProjectsSectionContainer, UL } from "./index";
 import { AiFillEdit } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 const mapStateToProps = (state) => {
   return {
@@ -76,13 +77,13 @@ const TodoInput = (props) => {
                 </List.Item>
               </List>
 
-              <UL>
+              <UL style={{ listStyle: "none !important" }}>
                 <li key={item.id} style={{ listStyle: "none !important" }}>
-                  <TextArea
+                <TextArea
                     ref={inputRef}
                     disabled={inputRef}
                     defaultValue={item.item}
-                    onChange={(e) => setTodo(e.target.value)}
+                    onKeyPress={(e) => update(item.id, inputRef.current.value, e)}
                   />
                   <div>
                     <Button onClick={() => changeFocus()}>

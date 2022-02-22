@@ -1,13 +1,11 @@
 import React, { useRef } from "react";
 import { connect } from "react-redux";
+import { GlobalStyle } from '../layout/global-style';
 import { AiFillEdit } from "react-icons/ai";
 import { IoCheckmarkDoneSharp, IoClose } from "react-icons/io5";
+import { motion } from "framer-motion";
 import { UL } from "./index";
 import { Button, TextArea, Progress, Form } from 'semantic-ui-react'
-const styleLink = document.createElement('link');
-styleLink.rel = 'stylesheet';
-styleLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css';
-document.head.appendChild(styleLink);
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -23,7 +21,8 @@ const mapStateToProps = (state) => {
 };
 
 const TodoItem = props => {
-  const { item, removeTodo, completeTodo } = props;
+  <GlobalStyle />
+  const { item, updateTodo, removeTodo, completeTodo } = props;
   const inputRef = useRef(true);
 
   const changeFocus = () => {
@@ -32,14 +31,15 @@ const TodoItem = props => {
   };
 
   const update = (id, value, e) => {
+    console.log("update: ", e.which)
     if (e.which === 13) {
       //here 13 is key code for enter key
       updateTodo({ id, item: value });
-      inputRef.current.disabled = true;
+      inputRef.current.disabled = false;
     }
   };
 
-  const keyPress = (e) => {
+  const keyPress = (e, id, value,) => {
     if (e.charCode === 32 || e.charCode === 13) {
       // Prevent the default action to stop scrolling when space is pressed
       e.preventDefault()
@@ -50,7 +50,7 @@ const TodoItem = props => {
 
   return (
     <div>
-      <UL>
+      <UL style={{ listStyle: "none !important" }}>
         <li key={item.id} style={{ listStyle: "none !important" }}>
           <Form>
             <TextArea
@@ -61,7 +61,7 @@ const TodoItem = props => {
             />
           </Form>
 
-          <Button loading onClick={() => changeFocus()}>
+          <Button onClick={() => changeFocus()}>
             <AiFillEdit />
           </Button>
           {item.completed === false && (
@@ -75,14 +75,21 @@ const TodoItem = props => {
           <Button style={{ color: "red" }} onClick={() => removeTodo(item.id)}>
             <IoClose />
           </Button>
-          {item.completed && <Progress percent={100} success>
-            This Task Is Completed
-          </Progress>}
-          {!item.completed && <Progress percent={50} error>
-            This Task Is Not Compleled Yet.
-          </Progress>}
+
         </li>
       </UL>
+
+      <div style={{ padding: ".5rem" }}>
+        {item.completed && <Progress percent={100} success>
+          This Task Is Completed
+        </Progress>}
+      </div>
+      <div style={{ padding: ".5rem" }}>
+        {item.completed && <Progress percent={50} error>
+          This Task Is Completed
+        </Progress>}
+      </div>
+
     </div>
   );
 };
