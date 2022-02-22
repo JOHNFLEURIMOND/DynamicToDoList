@@ -120,8 +120,9 @@ Where the user will see the Main Hero for the page and Two buttons that say `Com
 
 `CompletedItems.jsx`
 
+
     ```
-    <ButtonArea>
+ <ButtonArea>
   <Button basic color="green" onClick={() => setSort("completed")}>
     Completed
   </Button>
@@ -129,10 +130,8 @@ Where the user will see the Main Hero for the page and Two buttons that say `Com
   <Button basic color="red   " onClick={() => setSort("all")}>
     All
   </Button>
-</ButtonArea>;
-
-{
-  props.todos.length > 0 && sort === "completed"
+</ButtonArea>
+{props.todos.length > 0 && sort === "completed"
     ? props.todos.map(item => {
         return (
           item.completed === true && (
@@ -158,9 +157,8 @@ Where the user will see the Main Hero for the page and Two buttons that say `Com
           )
         );
       })
-    : null;
-}
-```
+    : null;}
+    ```
 
 # Portfolio :open_file_folder::
 
