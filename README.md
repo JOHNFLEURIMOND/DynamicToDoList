@@ -132,9 +132,6 @@ Where the user will see the Main Hero for the page and Two buttons that say `Com
 </ButtonArea>;
 
 {
-  /* for completed items */
-}
-{
   props.todos.length > 0 && sort === "completed"
     ? props.todos.map(item => {
         return (
