@@ -69,7 +69,7 @@ const ToDoItem = (props) => {
           </Progress>
         )}
       </div>
-      <div style={{ padding: '.5rem' }}>
+      <div style={{ padding: '.5rem 0' }}>
         {!item.completed && (
           <Progress percent={50} error>
             This Task Is Not Completed
