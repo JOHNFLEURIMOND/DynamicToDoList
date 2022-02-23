@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { GlobalStyle } from '../layout/global-style';
 import { connect } from 'react-redux';
-import { addTodos, updateTodos, completeTodo, removeTodos } from '../Redux/reducer';
+import { addTodos, updateTodos, completeTodos, removeTodos } from '../Redux/reducer';
 import { List, Segment, Button } from 'semantic-ui-react';
 import { ProjectsSectionContainer, UL, ButtonArea } from './index';
 import ToDoItem from './ToDoItem';
