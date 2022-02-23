@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { addTodos, updateTodos, completeTodo, removeTodos } from '../Redux/reducer';
 import { List, Segment, Button, Input } from 'semantic-ui-react';
 import { ProjectsSectionContainer, UL, Form } from './index';
-import { AiFillEdit } from 'react-icons/ai';
 import ToDoItem from './ToDoItem';
 
 const mapStateToProps = (state) => {

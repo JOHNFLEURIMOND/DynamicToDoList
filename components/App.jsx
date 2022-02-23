@@ -7,7 +7,7 @@ import CompletedListPage from "./ToDoList/CompletedListPage";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { GlobalStyle, Container } from "./layout/global-style";
 
-const Homepage = props => {
+const Homepage = () => {
   return (
     <Container>
       <GlobalStyle />
