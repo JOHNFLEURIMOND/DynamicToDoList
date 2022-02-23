@@ -27,10 +27,11 @@ const DisplayTodos = (props) => {
             </a>
           </MenuItem>
         </Menu>
-        <Button onClick={() => history.push("/", { from: "CompletedItems" })}>
-          HomePage
-        </Button>
       </ProjectsSectionContainer>
+
+      <Button onClick={() => history.push("/", { from: "CompletedItems" })} style={{ display: "flex", textAlign: "center", justifyContent: "center" }}>
+        HomePage
+      </Button>
     </Container>
   );
 };

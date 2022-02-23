@@ -92,8 +92,9 @@ const CompletedItems = (props) => {
             );
           })
           : null}
+
       </CardContainer>
-      <Button onClick={() => history.push("/", { from: "CompletedItems" })}>
+      <Button onClick={() => history.push("/", { from: "CompletedItems" })} style={{ display: "flex", textAlign: "center", justifyContent: "center" }}>
         HomePage
       </Button>
     </ProjectsSectionContainer>
