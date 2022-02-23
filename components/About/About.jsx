@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Nav from '../Navbar/Nav.jsx';
-import Footer from '../Footer/Footer';
 import AboutHero from '../MainHero/AboutHero';
 import { GlobalStyle, Container } from '../layout/global-style';
-import { ProjectsSectionContainer, MenuLink, MenuItem, Menu } from './index';
+import { ProjectsSectionContainer, MenuItem, Menu } from './index';
 
 const DisplayTodos = (props) => {
   //click is the initial state and setclick will be the update state
@@ -28,7 +27,6 @@ const DisplayTodos = (props) => {
           </MenuItem>
         </Menu>
       </ProjectsSectionContainer>
-      <Footer />
     </Container>
   );
 };
