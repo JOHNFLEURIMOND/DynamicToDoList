@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Nav from '../Navbar/Nav.jsx';
+import Footer from '../Footer/Footer.jsx';
 import CompletedMainHero from '../MainHero/CompletedMainHero';
 import { GlobalStyle, Container } from '../layout/global-style';
 import { connect } from 'react-redux';
@@ -30,6 +31,7 @@ const DisplayTodos = (props) => {
       <ProjectsSectionContainer>
         <GlobalStyle />
         <CompletedItems />
+        <Footer />
       </ProjectsSectionContainer>
     </Container>
   );

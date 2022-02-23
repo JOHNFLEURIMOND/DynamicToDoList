@@ -42,8 +42,8 @@ const CompletedItems = (props) => {
           ? props.todos.map((item) => {
               return (
                 item.completed === true && (
-                  <Segment inverted key={item.id}>
-                    <List divided inverted relaxed>
+                  <Segment key={item.id}>
+                    <List divided relaxed>
                       <List.Item>
                         <List.Content>{item.item}</List.Content>
                       </List.Item>
@@ -69,8 +69,8 @@ const CompletedItems = (props) => {
         {props.todos.length > 0 && sort === 'all'
           ? props.todos.map((item) => {
               return (
-                <Segment inverted key={item.id}>
-                  <List divided inverted relaxed>
+                <Segment key={item.id}>
+                  <List divided relaxed>
                     <List.Item>
                       <List.Content>{item.item}</List.Content>
                     </List.Item>
