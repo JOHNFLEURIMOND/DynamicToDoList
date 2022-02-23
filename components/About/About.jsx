@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import Nav from '../Navbar/Nav.jsx';
 import AboutHero from '../MainHero/AboutHero';
+import { useHistory } from "react-router-dom";
 import { GlobalStyle, Container } from '../layout/global-style';
 import { ProjectsSectionContainer, MenuItem, Menu } from './index';
+import { Button } from 'semantic-ui-react';
 
 const DisplayTodos = (props) => {
   //click is the initial state and setclick will be the update state
   const [click, setClick] = useState(false);
-
+  const history = useHistory();
   //Create a function to handle the click state of the menu icon.
-  //if the menu icon was the menu bar at the beginning when clicked it will have the close icon
   const handleClick = () => setClick(!click);
 
   return (
@@ -26,6 +27,9 @@ const DisplayTodos = (props) => {
             </a>
           </MenuItem>
         </Menu>
+        <Button onClick={() => history.push("/", { from: "CompletedItems" })}>
+          HomePage
+        </Button>
       </ProjectsSectionContainer>
     </Container>
   );
