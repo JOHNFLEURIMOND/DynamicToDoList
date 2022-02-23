@@ -1,6 +1,5 @@
 import React from 'react';
 import Nav from '../components/Navbar/Nav.jsx';
-import Footer from '../components/Footer/Footer';
 import MainHero from '../components/MainHero/MainHero';
 import About from '../components/About/About';
 import ToDoList from './ToDoList/ToDoList';
@@ -18,7 +17,6 @@ const Homepage = (props) => {
       <Nav />
       <MainHero />
       <ToDoList />
-      <Footer />
     </Container>
   );
 };
