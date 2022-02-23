@@ -14,8 +14,11 @@ const Homepage = (props) => {
   return (
     <Container>
       <GlobalStyle />
+
       <Nav />
+     
       <MainHero />
+     
       <ToDoList />
     </Container>
   );
