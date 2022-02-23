@@ -51,7 +51,7 @@ const ToDoItem = (props) => {
       />
       <ButtonArea>
         <Button onClick={() => changeFocus()}>
-          <Icon name="edit" />
+          <Icon name='edit' />
         </Button>
         {item.completed === false && (
           <Button style={{ color: 'green' }} onClick={() => completeTodo(item.id)}>
@@ -59,7 +59,7 @@ const ToDoItem = (props) => {
           </Button>
         )}
         <Button style={{ color: 'red' }} onClick={() => removeTodo(item.id)}>
-          <Icon name="cancel" />
+          <Icon name='cancel' />
         </Button>
       </ButtonArea>
 

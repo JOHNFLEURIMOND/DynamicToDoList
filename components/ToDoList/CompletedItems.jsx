@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { GlobalStyle } from '../layout/global-style';
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addTodos, updateTodos, completeTodos, removeTodos } from '../Redux/reducer';
 import { List, Segment, Button } from 'semantic-ui-react';
@@ -41,8 +41,35 @@ const CompletedItems = (props) => {
       <CardContainer>
         {props.todos.length > 0 && sort === 'completed'
           ? props.todos.map((item) => {
-            return (
-              item.completed === true && (
+              return (
+                item.completed === true && (
+                  <Segment key={item.id}>
+                    <List divided relaxed>
+                      <List.Item>
+                        <List.Content>{item.item}</List.Content>
+                      </List.Item>
+                    </List>
+
+                    <UL>
+                      <li key={item.id} style={{ listStyle: 'none !important' }}>
+                        <ToDoItem
+                          key={item.id}
+                          item={item}
+                          removeTodo={props.removeTodo}
+                          updateTodo={props.updateTodo}
+                          completeTodo={props.completeTodo}
+                        />
+                      </li>
+                    </UL>
+                  </Segment>
+                )
+              );
+            })
+          : null}
+        {/* for all items */}
+        {props.todos.length > 0 && sort === 'all'
+          ? props.todos.map((item) => {
+              return (
                 <Segment key={item.id}>
                   <List divided relaxed>
                     <List.Item>
@@ -62,39 +89,14 @@ const CompletedItems = (props) => {
                     </li>
                   </UL>
                 </Segment>
-              )
-            );
-          })
+              );
+            })
           : null}
-        {/* for all items */}
-        {props.todos.length > 0 && sort === 'all'
-          ? props.todos.map((item) => {
-            return (
-              <Segment key={item.id}>
-                <List divided relaxed>
-                  <List.Item>
-                    <List.Content>{item.item}</List.Content>
-                  </List.Item>
-                </List>
-
-                <UL>
-                  <li key={item.id} style={{ listStyle: 'none !important' }}>
-                    <ToDoItem
-                      key={item.id}
-                      item={item}
-                      removeTodo={props.removeTodo}
-                      updateTodo={props.updateTodo}
-                      completeTodo={props.completeTodo}
-                    />
-                  </li>
-                </UL>
-              </Segment>
-            );
-          })
-          : null}
-
       </CardContainer>
-      <Button onClick={() => history.push("/", { from: "CompletedItems" })} style={{ display: "flex", textAlign: "center", justifyContent: "center" }}>
+      <Button
+        onClick={() => history.push('/', { from: 'CompletedItems' })}
+        style={{ display: 'flex', textAlign: 'center', justifyContent: 'center' }}
+      >
         HomePage
       </Button>
     </ProjectsSectionContainer>

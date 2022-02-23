@@ -11,7 +11,7 @@ export const ProjectsSectionContainer = styled.div`
   margin: 0;
   line-height: normal;
   background-color: ${fleurimondColors.white};
- 
+
   @media (max-width: 800px) {
     width: 100%;
     height: 100%;
@@ -38,35 +38,35 @@ export const Header = styled.h1`
     grid-column: span 2;
   }
 `;
-export const CardContainer =  styled.div`
-display: grid;
-justify-items: center;
-align-items: center;
-grid-gap: 1rem;
-width: 100%;
-height: 100%;
-box-sizing: border-box;
-font-size: 1rem;
-text-align: center;
-font-weight: 500;
-margin: 0;
-padding: 2em;
-grid-template-columns:  1fr 1fr 1fr;
-grid-template-rows: 1fr 1fr 1fr;
-line-height: normal;
-background-color: ${fleurimondColors.white};
-
-@media (max-width: 800px){
+export const CardContainer = styled.div`
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 1rem;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 500;
   margin: 0;
   padding: 2em;
-  grid-gap: 10px;
-  justify-items: center;
-  align-items: center;
-}
-  `;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  line-height: normal;
+  background-color: ${fleurimondColors.white};
+
+  @media (max-width: 800px) {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 2em;
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
+  }
+`;
 
 export const UL = styled.ul`
   list-style: none;
@@ -104,14 +104,14 @@ export const TextArea = styled.textarea`
 `;
 
 export const ButtonArea = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 export const InputArea = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 export const CineDiv = styled.div`
   display: grid;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Nav from '../Navbar/Nav.jsx';
 import AboutHero from '../MainHero/AboutHero';
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import { GlobalStyle, Container } from '../layout/global-style';
 import { ProjectsSectionContainer, MenuItem, Menu } from './index';
 import { Button } from 'semantic-ui-react';
@@ -29,7 +29,10 @@ const DisplayTodos = (props) => {
         </Menu>
       </ProjectsSectionContainer>
 
-      <Button onClick={() => history.push("/", { from: "CompletedItems" })} style={{ display: "flex", textAlign: "center", justifyContent: "center" }}>
+      <Button
+        onClick={() => history.push('/', { from: 'CompletedItems' })}
+        style={{ display: 'flex', textAlign: 'center', justifyContent: 'center' }}
+      >
         HomePage
       </Button>
     </Container>
