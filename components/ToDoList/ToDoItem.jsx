@@ -1,10 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { connect } from 'react-redux';
 import { GlobalStyle } from '../layout/global-style';
-import { AiFillEdit } from 'react-icons/ai';
-import { IoCheckmarkDoneSharp, IoClose } from 'react-icons/io5';
-import {  TextArea } from './index';
-import { Button, Progress } from 'semantic-ui-react';
+import { TextArea, ButtonArea } from './index';
+import { Button, Progress, Icon } from 'semantic-ui-react';
 import { addTodos, completeTodos, removeTodos, updateTodos } from '../Redux/reducer';
 
 const mapDispatchToProps = (dispatch) => {
@@ -23,7 +21,6 @@ const mapStateToProps = (state) => {
 };
 
 const ToDoItem = (props) => {
-  <GlobalStyle />;
   const { item, updateTodo, removeTodo, completeTodo } = props;
   const inputRef = useRef(true);
   const [todo, setTodo] = useState('');
@@ -43,6 +40,8 @@ const ToDoItem = (props) => {
 
   return (
     <div>
+      <GlobalStyle />
+
       <TextArea
         ref={inputRef}
         disabled={inputRef}
@@ -50,18 +49,20 @@ const ToDoItem = (props) => {
         onChange={(e) => setTodo(e.target.value)}
         onKeyDown={(e) => update(item.id, inputRef.current.value, e)}
       />
-
-      <Button onClick={() => changeFocus()}>
-        <AiFillEdit />
-      </Button>
-      {item.completed === false && (
-        <Button style={{ color: 'green' }} onClick={() => completeTodo(item.id)}>
-          <IoCheckmarkDoneSharp />
+      <ButtonArea>
+        <Button onClick={() => changeFocus()}>
+          <Icon name="edit" />
         </Button>
-      )}
-      <Button style={{ color: 'red' }} onClick={() => removeTodo(item.id)}>
-        <IoClose />
-      </Button>
+        {item.completed === false && (
+          <Button style={{ color: 'green' }} onClick={() => completeTodo(item.id)}>
+            <Icon name='checkmark' />
+          </Button>
+        )}
+        <Button style={{ color: 'red' }} onClick={() => removeTodo(item.id)}>
+          <Icon name="cancel" />
+        </Button>
+      </ButtonArea>
+
       <div style={{ padding: '.5rem 0' }}>
         {item.completed && (
           <Progress percent={100} success>

@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "../components/Navbar/Nav.jsx";
 import MainHero from "../components/MainHero/MainHero";
 import About from "../components/About/About";
+import Footer from "../components/Footer/Footer";
 import ToDoList from "./ToDoList/ToDoList";
 import CompletedListPage from "./ToDoList/CompletedListPage";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
@@ -14,6 +15,7 @@ const Homepage = () => {
       <Nav />
       <MainHero />
       <ToDoList />
+      <Footer />
     </Container>
   );
 };

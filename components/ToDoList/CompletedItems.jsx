@@ -3,7 +3,7 @@ import { GlobalStyle } from '../layout/global-style';
 import { connect } from 'react-redux';
 import { addTodos, updateTodos, completeTodos, removeTodos } from '../Redux/reducer';
 import { List, Segment, Button } from 'semantic-ui-react';
-import { ProjectsSectionContainer, UL, ButtonArea } from './index';
+import { ProjectsSectionContainer, UL, ButtonArea, CardContainer } from './index';
 import ToDoItem from './ToDoItem';
 
 const mapStateToProps = (state) => {
@@ -37,7 +37,7 @@ const CompletedItems = (props) => {
       </ButtonArea>
 
       {/* for completed items */}
-      <div>
+      <CardContainer>
         {props.todos.length > 0 && sort === 'completed'
           ? props.todos.map((item) => {
               return (
@@ -91,7 +91,7 @@ const CompletedItems = (props) => {
               );
             })
           : null}
-      </div>
+      </CardContainer>
     </ProjectsSectionContainer>
   );
 };

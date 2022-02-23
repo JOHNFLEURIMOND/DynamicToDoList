@@ -1,9 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { GlobalStyle } from '../layout/global-style';
 import { connect } from 'react-redux';
 import { addTodos, updateTodos, completeTodos, removeTodos } from '../Redux/reducer';
 import { List, Segment, Button, Input } from 'semantic-ui-react';
-import { ProjectsSectionContainer, UL } from './index';
+import { ProjectsSectionContainer, UL, InputArea, CardContainer  } from './index';
 import ToDoItem from './ToDoItem';
 
 const mapStateToProps = (state) => {
@@ -21,11 +21,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 const ToDoInput = (props) => {
-  console.log('state', props);
   const [todo, setTodo] = useState('');
-  const { updateTodo } = props;
-  console.log('updateTodo:', updateTodo);
-  const inputRef = useRef(true);
 
   const add = (e) => {
     if (todo === '') {
@@ -43,7 +39,7 @@ const ToDoInput = (props) => {
   return (
     <ProjectsSectionContainer>
       <GlobalStyle />
-      <div>
+      <InputArea>
         <Input
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
@@ -53,13 +49,13 @@ const ToDoInput = (props) => {
         <Button color='green' onClick={() => add()}>
           Submit
         </Button>
-      </div>
+      </InputArea>
 
-      <div>
+      <CardContainer>
         {props.todos.length > 0 &&
           props.todos.map((item) => {
             return (
-              <Segment inverted key={item.id} style={{ marginLeft: '3rem', width: '340px' }}>
+              <Segment key={item.id} style={{ margin: '5rem 5rem 0 3rem', width: '340px' }}>
                 <List divided inverted relaxed>
                   <List.Item>
                     <List.Content>{item.item}</List.Content>
@@ -80,7 +76,7 @@ const ToDoInput = (props) => {
               </Segment>
             );
           })}
-      </div>
+      </CardContainer>
     </ProjectsSectionContainer>
   );
 };

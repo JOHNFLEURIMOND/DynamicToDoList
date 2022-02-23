@@ -2,23 +2,16 @@ import styled, { css } from 'styled-components';
 import { fleurimondColors } from '../../utils/theme.js';
 
 export const ProjectsSectionContainer = styled.div`
-  display: grid;
-  justify-items: left;
-  align-items: left;
-  grid-gap: 1rem;
   width: 100%;
-  height: 80vw;
+  height: 100%;
   box-sizing: border-box;
   font-size: 1rem;
   text-align: left;
   font-weight: 500;
   margin: 0;
-  padding-left: 10rem;
   line-height: normal;
   background-color: ${fleurimondColors.white};
-  grid-template-columns: 1fr;
-  grid-template-rows: 50px 200px;
-
+ 
   @media (max-width: 800px) {
     width: 100%;
     height: 100%;
@@ -45,6 +38,36 @@ export const Header = styled.h1`
     grid-column: span 2;
   }
 `;
+export const CardContainer =  styled.div`
+display: grid;
+justify-items: center;
+align-items: center;
+grid-gap: 1rem;
+width: 100%;
+height: 100%;
+box-sizing: border-box;
+font-size: 1rem;
+text-align: center;
+font-weight: 500;
+margin: 0;
+padding: 2em;
+grid-template-columns:  1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr;
+line-height: normal;
+background-color: ${fleurimondColors.white};
+
+@media (max-width: 800px){
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 2em;
+  grid-gap: 10px;
+  justify-items: center;
+  align-items: center;
+}
+  `;
+
 export const UL = styled.ul`
   list-style: none;
 `;
@@ -81,10 +104,14 @@ export const TextArea = styled.textarea`
 `;
 
 export const ButtonArea = styled.div`
-  display: grid;
-  grid-template-rows: 50px;
-  grid-template-columns: 150px 150px;
-  grid-gap: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+`;
+export const InputArea = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
 `;
 export const CineDiv = styled.div`
   display: grid;
