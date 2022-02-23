@@ -18,7 +18,9 @@ dist/
 .vscode/
 
 # Dependency directory
+
 node_modules/
+build/
 
 # macOS X files
 .DS_Store
