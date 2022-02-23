@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ToDoInput from './ToDoInput';
 import 'cross-fetch/polyfill';
 import { GlobalStyle } from '../layout/global-style';
