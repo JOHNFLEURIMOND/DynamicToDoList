@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { GlobalStyle } from '../layout/global-style';
 import { connect } from 'react-redux';
 import { addTodos, updateTodos, completeTodos, removeTodos } from '../Redux/reducer';
