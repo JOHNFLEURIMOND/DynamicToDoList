@@ -12,11 +12,7 @@ export const Nav = styled.nav`
   top: 0;
   z-index: 999;
   height: 80px;
-  background: linear-gradient(
-    90deg,
-    ${fleurimondColors.black} 0%,
-    ${fleurimondColors.smoke} 27%,
-    ${fleurimondColors.graySmoke} 85%
+  background: ${fleurimondColors.black};
   );
   /* box-shadow: ${fleurimondColors.graySmoke} ; */
   box-shadow: 0px 2px 10px ${fleurimondColors.graySmoke};

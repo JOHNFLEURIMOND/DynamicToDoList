@@ -14,12 +14,7 @@ export const Footer = styled.footer`
   text-align: center;
   justify-content: center;
   font-size: 1.4rem;
-  background: linear-gradient(
-    90deg,
-    ${fleurimondColors.black} 0%,
-    ${fleurimondColors.smoke} 27%,
-    ${fleurimondColors.graySmoke} 85%
-  );
+  background: ${fleurimondColors.black};
   /* box-shadow: ${fleurimondColors.graySmoke} ; */
   box-shadow: 0px 2px 10px ${fleurimondColors.graySmoke};
   padding: 20px;
