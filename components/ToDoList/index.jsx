@@ -2,13 +2,17 @@ import styled, { css } from 'styled-components';
 import { fleurimondColors } from '../../utils/theme.js';
 
 export const ProjectsSectionContainer = styled.div`
+  justify-items: center;
+  align-items: center;
+  grid-gap: 1rem;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   font-size: 1rem;
-  text-align: left;
+  text-align: center;
   font-weight: 500;
   margin: 0;
+  padding: 2em;
   line-height: normal;
   background-color: ${fleurimondColors.white};
 
@@ -18,8 +22,21 @@ export const ProjectsSectionContainer = styled.div`
     box-sizing: border-box;
     margin: 0;
     padding: 2em;
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  @media (max-width: 400px) {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 2em;
+    display: grid;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
     justify-items: center;
@@ -39,7 +56,6 @@ export const Header = styled.h1`
   }
 `;
 export const CardContainer = styled.div`
-  display: grid;
   justify-items: center;
   align-items: center;
   grid-gap: 1rem;
@@ -51,8 +67,6 @@ export const CardContainer = styled.div`
   font-weight: 500;
   margin: 0;
   padding: 2em;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
   line-height: normal;
   background-color: ${fleurimondColors.white};
 
@@ -65,6 +79,34 @@ export const CardContainer = styled.div`
     grid-gap: 10px;
     justify-items: center;
     align-items: center;
+  }
+`;
+
+export const CardDiv = styled.div`
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 1rem;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  @media (max-width: 800px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 1rem;
+  }
+  @media (max-width: 430px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 1rem;
   }
 `;
 

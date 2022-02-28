@@ -3,7 +3,7 @@ import { GlobalStyle } from '../layout/global-style';
 import { connect } from 'react-redux';
 import { addTodos, updateTodos, completeTodos, removeTodos } from '../Redux/reducer';
 import { List, Segment, Button, Input } from 'semantic-ui-react';
-import { ProjectsSectionContainer, UL, InputArea, CardContainer } from './index';
+import { ProjectsSectionContainer, UL, InputArea, CardContainer, CardDiv } from './index';
 import ToDoItem from './ToDoItem';
 
 const mapStateToProps = (state) => {
@@ -51,11 +51,11 @@ const ToDoInput = (props) => {
         </Button>
       </InputArea>
 
-      <CardContainer>
+      <CardDiv>
         {props.todos.length > 0 &&
           props.todos.map((item) => {
             return (
-              <Segment key={item.id} style={{ margin: '5rem 5rem 0 3rem', width: '340px' }}>
+              <Segment key={item.id} style={{ margin: '5rem 0', width: '340px' }}>
                 <List divided inverted relaxed>
                   <List.Item>
                     <List.Content>{item.item}</List.Content>
@@ -76,7 +76,7 @@ const ToDoInput = (props) => {
               </Segment>
             );
           })}
-      </CardContainer>
+      </CardDiv>
     </ProjectsSectionContainer>
   );
 };
