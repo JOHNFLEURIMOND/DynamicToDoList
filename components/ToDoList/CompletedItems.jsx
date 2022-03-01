@@ -95,7 +95,7 @@ const CompletedItems = (props) => {
       </CardDiv>
       <Button
         onClick={() => history.push('/', { from: 'CompletedItems' })}
-        style={{ display: 'flex', alignContent: 'center', justifyContent: 'center', margin: "0 auto" }}
+        style={{ display: 'flex', alignContent: 'center', justifyContent: 'center', margin: "2rem auto" }}
       >
         HomePage
       </Button>
