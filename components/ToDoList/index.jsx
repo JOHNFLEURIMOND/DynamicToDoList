@@ -2,11 +2,10 @@ import styled, { css } from 'styled-components';
 import { fleurimondColors } from '../../utils/theme.js';
 
 export const ProjectsSectionContainer = styled.div`
-  justify-items: center;
-  align-items: center;
-  grid-gap: 1rem;
+  display: block;
   width: 100%;
-  height: 100%;
+  overflow: hidden;
+  min-height: 50vh;
   box-sizing: border-box;
   font-size: 1rem;
   text-align: center;
@@ -89,13 +88,13 @@ export const CardDiv = styled.div`
   grid-gap: 1rem;
   width: 100%;
   height: 100%;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-rows:repeat(auto-fit, minmax(350px, 1fr));
 
   @media (max-width: 800px) {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(350px, 1fr));
     justify-items: center;
     align-items: center;
     grid-gap: 1rem;

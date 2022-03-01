@@ -31,8 +31,8 @@ const DisplayTodos = (props) => {
       <ProjectsSectionContainer>
         <GlobalStyle />
         <CompletedItems />
-        <Footer />
       </ProjectsSectionContainer>
+        <Footer />
     </Container>
   );
 };

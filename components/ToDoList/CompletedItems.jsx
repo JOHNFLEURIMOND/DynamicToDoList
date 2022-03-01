@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addTodos, updateTodos, completeTodos, removeTodos } from '../Redux/reducer';
 import { List, Segment, Button } from 'semantic-ui-react';
-import { ProjectsSectionContainer, UL, ButtonArea, CardContainer } from './index';
+import { ProjectsSectionContainer, UL, CardDiv } from './index';
 import ToDoItem from './ToDoItem';
 
 const mapStateToProps = (state) => {
@@ -27,7 +27,7 @@ const CompletedItems = (props) => {
   return (
     <ProjectsSectionContainer>
       <GlobalStyle />
-      <ButtonArea>
+      <CardDiv>
         <Button basic color='green' onClick={() => setSort('completed')}>
           Completed
         </Button>
@@ -35,10 +35,10 @@ const CompletedItems = (props) => {
         <Button basic color='red   ' onClick={() => setSort('all')}>
           All
         </Button>
-      </ButtonArea>
+      </CardDiv>
 
       {/* for completed items */}
-      <CardContainer>
+      <CardDiv>
         {props.todos.length > 0 && sort === 'completed'
           ? props.todos.map((item) => {
               return (
@@ -92,10 +92,10 @@ const CompletedItems = (props) => {
               );
             })
           : null}
-      </CardContainer>
+      </CardDiv>
       <Button
         onClick={() => history.push('/', { from: 'CompletedItems' })}
-        style={{ display: 'flex', textAlign: 'center', justifyContent: 'center' }}
+        style={{ display: 'flex', alignContent: 'center', justifyContent: 'center', margin: "0 auto" }}
       >
         HomePage
       </Button>
